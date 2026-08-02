@@ -55,6 +55,22 @@ struct CardStackView: View {
     
     private var cardStack: some View {
         ZStack {
+            // Peek of the next card, sitting behind and slightly below the current one
+            if currentIndex + 1 < cardNumbers.count {
+                let nextNumber = cardNumbers[currentIndex + 1]
+                RoundedRectangle(cornerRadius: 24)
+                    .fill(colors[nextNumber % colors.count])
+                    .frame(width: 340, height: 480)
+                    .overlay(
+                        Text("Card \(nextNumber + 1)")
+                            .font(.largeTitle)
+                            .bold()
+                            .foregroundColor(.white)
+                    )
+                    .scaleEffect(0.95)
+                    .offset(y: 30)
+            }
+            
             ForEach(cardNumbers, id: \.self) { number in
                 if number == currentIndex {
                     RoundedRectangle(cornerRadius: 24)

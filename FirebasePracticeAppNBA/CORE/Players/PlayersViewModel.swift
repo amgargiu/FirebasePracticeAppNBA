@@ -6,3 +6,32 @@
 //
 
 import Foundation
+
+
+import Foundation
+
+
+@MainActor
+final class PlayersViewModel: ObservableObject {
+    
+    @Published private(set) var players : [PlayerModel] = []
+    
+    private var lastDocument: DocumentSnapshotContainer? = nil
+
+    
+//    func getPlayersAndUploadToFB() {
+//        PlayerManager.shared.downloadPlayersAndUploadToFirebase()
+//    }
+    
+    func getPlayers() {
+        Task {
+            let (newPlayers, lastDocument) = try await PlayerManager.shared.getAllPlayersPagination(count: 10, lastDocument: self.lastDocument)
+            self.players.append(contentsOf: newPlayers)
+            if let lastDocument {
+                self.lastDocument = lastDocument
+            }
+        }
+    }
+    
+    
+}

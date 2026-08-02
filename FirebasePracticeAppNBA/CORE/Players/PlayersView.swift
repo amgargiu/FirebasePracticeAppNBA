@@ -8,11 +8,42 @@
 import SwiftUI
 
 struct PlayersView: View {
+    
+    @StateObject private var vm = PlayersViewModel()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            ForEach(vm.players) { player in
+                Text(player.displayName)
+                    .onAppear {
+                        // Trigger pagination when the last item actually renders
+                        if player == vm.players.last {
+                            vm.getPlayers()
+                        }
+                    }
+            }
+            
+            // Show loading indicator at the bottom if more data can be fetched
+            ProgressView()
+                .frame(maxWidth: .infinity, alignment: .center)
+                .listRowBackground(Color.clear)
+        }
+        .listStyle(.grouped)
+        .padding()
+        .onAppear {
+            vm.getPlayers()
+        }
+        .task {
+//            vm.getPlayersAndUploadToFB()
+        }
+        .navigationTitle("Players")
+
     }
 }
 
 #Preview {
-    PlayersView()
+    NavigationStack {
+        PlayersView()
+    }
 }
+

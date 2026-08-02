@@ -8,8 +8,21 @@
 import SwiftUI
 
 struct PropCardsView: View {
+    
+    @StateObject private var vm = PropCardsViewModel()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            LazyVStack(spacing: 16) {
+                ForEach(vm.propCards) { propCard in
+                    PropCardView(propCard: propCard)
+                }
+            }
+            .padding()
+        }
+        .task {
+            vm.loadPropCards()
+        }
     }
 }
 

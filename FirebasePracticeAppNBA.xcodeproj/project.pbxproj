@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		730283D9301ED02F0041322D /* PickModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730283D8301ED02F0041322D /* PickModel.swift */; };
+		730283DB301ED2E40041322D /* CardStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730283DA301ED2E40041322D /* CardStackView.swift */; };
+		730283DD301ED9020041322D /* PropCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730283DC301ED9020041322D /* PropCard.swift */; };
+		730283DF301ED9B00041322D /* CardGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730283DE301ED9B00041322D /* CardGenerator.swift */; };
+		730283E2301EDBFC0041322D /* PropCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730283E1301EDBFC0041322D /* PropCardView.swift */; };
+		730283EC301EF65C0041322D /* PropCardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730283EB301EF65C0041322D /* PropCardsViewModel.swift */; };
+		730283EE301EF6900041322D /* PropCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730283ED301EF6900041322D /* PropCardsView.swift */; };
 		7344C93A301837C200ABB4AD /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 7344C939301837C200ABB4AD /* FirebaseAnalytics */; };
 		7344C93C301837C200ABB4AD /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 7344C93B301837C200ABB4AD /* FirebaseAuth */; };
 		7344C93E301837C200ABB4AD /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 7344C93D301837C200ABB4AD /* FirebaseCrashlytics */; };
@@ -37,9 +44,20 @@
 		7344C98A301B0B8C00ABB4AD /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7344C988301B0B8C00ABB4AD /* TabBarView.swift */; };
 		7344C98C301B10FA00ABB4AD /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7344C98B301B10FA00ABB4AD /* NetworkingManager.swift */; };
 		7344C98E301E70D200ABB4AD /* Query+EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7344C98D301E70D200ABB4AD /* Query+EXT.swift */; };
+		7344C996301EC1E600ABB4AD /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7344C995301EC1E600ABB4AD /* PlayerModel.swift */; };
+		7344C998301EC24A00ABB4AD /* PlayersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7344C997301EC24A00ABB4AD /* PlayersManager.swift */; };
+		7344C99B301EC54E00ABB4AD /* PlayersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7344C99A301EC54E00ABB4AD /* PlayersViewModel.swift */; };
+		7344C99D301EC5AE00ABB4AD /* PlayersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7344C99C301EC5AE00ABB4AD /* PlayersView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		730283D8301ED02F0041322D /* PickModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickModel.swift; sourceTree = "<group>"; };
+		730283DA301ED2E40041322D /* CardStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStackView.swift; sourceTree = "<group>"; };
+		730283DC301ED9020041322D /* PropCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropCard.swift; sourceTree = "<group>"; };
+		730283DE301ED9B00041322D /* CardGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGenerator.swift; sourceTree = "<group>"; };
+		730283E1301EDBFC0041322D /* PropCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropCardView.swift; sourceTree = "<group>"; };
+		730283EB301EF65C0041322D /* PropCardsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropCardsViewModel.swift; sourceTree = "<group>"; };
+		730283ED301EF6900041322D /* PropCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropCardsView.swift; sourceTree = "<group>"; };
 		7344C9183018307A00ABB4AD /* FirebasePracticeAppNBA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebasePracticeAppNBA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7344C94E30184A8F00ABB4AD /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		7344C95B3018616100ABB4AD /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
@@ -64,6 +82,10 @@
 		7344C988301B0B8C00ABB4AD /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		7344C98B301B10FA00ABB4AD /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		7344C98D301E70D200ABB4AD /* Query+EXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Query+EXT.swift"; sourceTree = "<group>"; };
+		7344C995301EC1E600ABB4AD /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
+		7344C997301EC24A00ABB4AD /* PlayersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersManager.swift; sourceTree = "<group>"; };
+		7344C99A301EC54E00ABB4AD /* PlayersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersViewModel.swift; sourceTree = "<group>"; };
+		7344C99C301EC5AE00ABB4AD /* PlayersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +107,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		730283E0301EDBE70041322D /* PropCard */ = {
+			isa = PBXGroup;
+			children = (
+				730283E1301EDBFC0041322D /* PropCardView.swift */,
+				730283EB301EF65C0041322D /* PropCardsViewModel.swift */,
+				730283ED301EF6900041322D /* PropCardsView.swift */,
+			);
+			path = PropCard;
+			sourceTree = "<group>";
+		};
 		7344C90F3018307A00ABB4AD = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +137,9 @@
 			isa = PBXGroup;
 			children = (
 				7344C97E301AE11200ABB4AD /* DBUser.swift */,
+				7344C995301EC1E600ABB4AD /* PlayerModel.swift */,
+				730283DC301ED9020041322D /* PropCard.swift */,
+				730283D8301ED02F0041322D /* PickModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -112,8 +147,11 @@
 		7344C92F301832A600ABB4AD /* CORE */ = {
 			isa = PBXGroup;
 			children = (
-				7344C94E30184A8F00ABB4AD /* RootView.swift */,
+				730283E0301EDBE70041322D /* PropCard */,
+				7344C999301EC53A00ABB4AD /* Players */,
 				7344C9693019ACA000ABB4AD /* Authentication */,
+				7344C985301B0B5E00ABB4AD /* Profile */,
+				7344C9703019B0FF00ABB4AD /* Settings */,
 			);
 			path = CORE;
 			sourceTree = "<group>";
@@ -138,6 +176,7 @@
 		7344C934301832ED00ABB4AD /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				730283DE301ED9B00041322D /* CardGenerator.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -198,9 +237,9 @@
 				7344C931301832D200ABB4AD /* Extensions */,
 				7344C92E301832A300ABB4AD /* Models */,
 				7344C92F301832A600ABB4AD /* CORE */,
-				7344C9703019B0FF00ABB4AD /* Settings */,
-				7344C989301B0B8C00ABB4AD /* TabBar */,
-				7344C985301B0B5E00ABB4AD /* Profile */,
+				7344C94E30184A8F00ABB4AD /* RootView.swift */,
+				7344C988301B0B8C00ABB4AD /* TabBarView.swift */,
+				730283DA301ED2E40041322D /* CardStackView.swift */,
 				7344C9733019B11400ABB4AD /* Assets.xcassets */,
 				7344C9743019B11400ABB4AD /* ContentView.swift */,
 				7344C9753019B11400ABB4AD /* FirebasePracticeAppNBAApp.swift */,
@@ -214,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				7344C981301AE8F100ABB4AD /* UserManager.swift */,
+				7344C997301EC24A00ABB4AD /* PlayersManager.swift */,
 			);
 			path = Firestore;
 			sourceTree = "<group>";
@@ -227,12 +267,13 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
-		7344C989301B0B8C00ABB4AD /* TabBar */ = {
+		7344C999301EC53A00ABB4AD /* Players */ = {
 			isa = PBXGroup;
 			children = (
-				7344C988301B0B8C00ABB4AD /* TabBarView.swift */,
+				7344C99A301EC54E00ABB4AD /* PlayersViewModel.swift */,
+				7344C99C301EC5AE00ABB4AD /* PlayersView.swift */,
 			);
-			path = TabBar;
+			path = Players;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,24 +363,35 @@
 			files = (
 				7344C98E301E70D200ABB4AD /* Query+EXT.swift in Sources */,
 				7344C9713019B0FF00ABB4AD /* SettingsView.swift in Sources */,
+				7344C99B301EC54E00ABB4AD /* PlayersViewModel.swift in Sources */,
 				7344C9723019B0FF00ABB4AD /* SettingsViewModel.swift in Sources */,
 				7344C94F30184A8F00ABB4AD /* RootView.swift in Sources */,
 				7344C982301AE8F100ABB4AD /* UserManager.swift in Sources */,
+				730283D9301ED02F0041322D /* PickModel.swift in Sources */,
 				7344C96A3019ACA000ABB4AD /* SelectAuthView.swift in Sources */,
+				730283E2301EDBFC0041322D /* PropCardView.swift in Sources */,
+				730283EC301EF65C0041322D /* PropCardsViewModel.swift in Sources */,
+				7344C996301EC1E600ABB4AD /* PlayerModel.swift in Sources */,
 				7344C96B3019ACA000ABB4AD /* SignInEmailViewModel.swift in Sources */,
 				7344C986301B0B5E00ABB4AD /* ProfileViewModel.swift in Sources */,
 				7344C987301B0B5E00ABB4AD /* ProfileView.swift in Sources */,
 				7344C96C3019ACA000ABB4AD /* SignInEmailView.swift in Sources */,
+				730283DB301ED2E40041322D /* CardStackView.swift in Sources */,
 				7344C96D3019ACA000ABB4AD /* SelectAuthViewModel.swift in Sources */,
+				7344C998301EC24A00ABB4AD /* PlayersManager.swift in Sources */,
 				7344C98C301B10FA00ABB4AD /* NetworkingManager.swift in Sources */,
 				7344C98A301B0B8C00ABB4AD /* TabBarView.swift in Sources */,
 				7344C9613019AB8600ABB4AD /* SignInGoogleHelper.swift in Sources */,
 				7344C9623019AB8600ABB4AD /* AuthManager.swift in Sources */,
+				730283EE301EF6900041322D /* PropCardsView.swift in Sources */,
 				7344C9633019AB8600ABB4AD /* SignInAppleHelper.swift in Sources */,
 				7344C95C3018616100ABB4AD /* Utilities.swift in Sources */,
+				730283DD301ED9020041322D /* PropCard.swift in Sources */,
 				7344C97C3019B11400ABB4AD /* ContentView.swift in Sources */,
 				7344C97F301AE11200ABB4AD /* DBUser.swift in Sources */,
 				7344C97D3019B11400ABB4AD /* FirebasePracticeAppNBAApp.swift in Sources */,
+				7344C99D301EC5AE00ABB4AD /* PlayersView.swift in Sources */,
+				730283DF301ED9B00041322D /* CardGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
