@@ -18,7 +18,7 @@ struct TabBarView: View {
         TabView {
             
             NavigationStack {
-                Text("Home")
+                PlayersView()
             }
             .tabItem {
                 Label("Products", systemImage: "cart")
