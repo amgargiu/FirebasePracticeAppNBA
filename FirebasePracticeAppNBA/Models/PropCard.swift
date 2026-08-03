@@ -116,7 +116,8 @@ extension PropCard {
             opp: "MIN",
             pts: 24.3,
             image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1641705.png",
-            teamImage: "https://a.espncdn.com/i/teamlogos/nba/500/sa.png"
+            teamImage: "https://a.espncdn.com/i/teamlogos/nba/500/sa.png",
+            position: "F-C"
         ),
         line: 10.5
     )
@@ -130,7 +131,8 @@ extension PropCard {
             opp: "CLE",
             pts: 24.5,
             image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1630595.png",
-            teamImage: "https://a.espncdn.com/i/teamlogos/nba/500/det.png"
+            teamImage: "https://a.espncdn.com/i/teamlogos/nba/500/det.png",
+            position: "G"
         ),
         playerTwo: PlayerModel.mock(
             id: 2,
@@ -139,7 +141,8 @@ extension PropCard {
             opp: "@DET",
             pts: 25.5,
             image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1628378.png",
-            teamImage: "https://a.espncdn.com/i/teamlogos/nba/500/cle.png"
+            teamImage: "https://a.espncdn.com/i/teamlogos/nba/500/cle.png",
+            position: "G"
         )
     )
 }

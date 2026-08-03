@@ -344,7 +344,7 @@ struct PropCardView: View {
                 name: "Cade Cunningham",
                 team: "DET",
                 opp: "CLE",
-                pts: 24.5,
+                pts: 24.4,
                 image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1630595.png",
                 teamImage: "https://a.espncdn.com/i/teamlogos/nba/500/det.png"
             ),
@@ -353,7 +353,7 @@ struct PropCardView: View {
                 name: "Donovan Mitchell",
                 team: "CLE",
                 opp: "@DET",
-                pts: 25.5,
+                pts: 25.6,
                 image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1628378.png",
                 teamImage: "https://a.espncdn.com/i/teamlogos/nba/500/cle.png"
             )

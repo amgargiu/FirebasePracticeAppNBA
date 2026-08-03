@@ -18,14 +18,14 @@ struct TabBarView: View {
         TabView {
             
             NavigationStack {
-                PlayersView()
+                PropCardsView()
             }
             .tabItem {
                 Label("Products", systemImage: "cart")
             }
             
             NavigationStack {
-                Text("Other")
+                PlayersView()
             }
             .tabItem {
                 Label("Products", systemImage: "star.fill")

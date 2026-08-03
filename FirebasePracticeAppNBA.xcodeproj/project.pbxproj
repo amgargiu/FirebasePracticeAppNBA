@@ -17,6 +17,7 @@
 		730283F0301FF2200041322D /* PropCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730283EF301FF2200041322D /* PropCardsView.swift */; };
 		730283F23020107E0041322D /* ReviewPicksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730283F13020107E0041322D /* ReviewPicksView.swift */; };
 		730283F6302010C20041322D /* PickRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730283F5302010C20041322D /* PickRowView.swift */; };
+		730283F8302029D20041322D /* PickManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730283F7302029D20041322D /* PickManager.swift */; };
 		7344C93A301837C200ABB4AD /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 7344C939301837C200ABB4AD /* FirebaseAnalytics */; };
 		7344C93C301837C200ABB4AD /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 7344C93B301837C200ABB4AD /* FirebaseAuth */; };
 		7344C93E301837C200ABB4AD /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 7344C93D301837C200ABB4AD /* FirebaseCrashlytics */; };
@@ -64,6 +65,7 @@
 		730283EF301FF2200041322D /* PropCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropCardsView.swift; sourceTree = "<group>"; };
 		730283F13020107E0041322D /* ReviewPicksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewPicksView.swift; sourceTree = "<group>"; };
 		730283F5302010C20041322D /* PickRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickRowView.swift; sourceTree = "<group>"; };
+		730283F7302029D20041322D /* PickManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickManager.swift; sourceTree = "<group>"; };
 		7344C9183018307A00ABB4AD /* FirebasePracticeAppNBA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebasePracticeAppNBA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7344C94E30184A8F00ABB4AD /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		7344C95B3018616100ABB4AD /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
@@ -127,8 +129,8 @@
 		730283F3302010980041322D /* ReviewPicks */ = {
 			isa = PBXGroup;
 			children = (
-				730283F4302010A50041322D /* PickRowView */,
 				730283F13020107E0041322D /* ReviewPicksView.swift */,
+				730283F4302010A50041322D /* PickRowView */,
 			);
 			path = ReviewPicks;
 			sourceTree = "<group>";
@@ -279,6 +281,7 @@
 			children = (
 				7344C981301AE8F100ABB4AD /* UserManager.swift */,
 				7344C997301EC24A00ABB4AD /* PlayersManager.swift */,
+				730283F7302029D20041322D /* PickManager.swift */,
 			);
 			path = Firestore;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				7344C98A301B0B8C00ABB4AD /* TabBarView.swift in Sources */,
 				7344C9613019AB8600ABB4AD /* SignInGoogleHelper.swift in Sources */,
 				7344C9623019AB8600ABB4AD /* AuthManager.swift in Sources */,
+				730283F8302029D20041322D /* PickManager.swift in Sources */,
 				730283EE301EF6900041322D /* PropCardsView2.swift in Sources */,
 				730283F0301FF2200041322D /* PropCardsView.swift in Sources */,
 				7344C9633019AB8600ABB4AD /* SignInAppleHelper.swift in Sources */,

@@ -46,23 +46,35 @@ struct ReviewPicksView: View {
     
     private var confirmButton: some View {
         Button(action: {
-            do {
-                let picks = try vm.resolvePicks()
-                print("Resolved \(picks.count) picks ready for upload: \(picks)")
-            } catch {
-                // TODO: surface this to the user (e.g. an alert) once sign-in is wired up —
-                // for now this only fires if someone reaches this screen while signed out
-                print("Failed to resolve picks: \(error)")
+            Task {
+                await vm.submitPicks()
             }
         }) {
-            Text("Confirm & Submit")
-                .font(.title2.bold())
-                .foregroundColor(.white)
-                .frame(maxWidth: .infinity)
-                .padding()
-                .background(Color.blue)
-                .cornerRadius(16)
+            if vm.isUploading {
+                ProgressView()
+                    .tint(.white)
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(Color.blue)
+                    .cornerRadius(16)
+            } else {
+                Text("Confirm & Submit")
+                    .font(.title2.bold())
+                    .foregroundColor(.white)
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(Color.blue)
+                    .cornerRadius(16)
+            }
         }
+        .disabled(vm.isUploading)
+        .alert("Something went wrong", isPresented: .constant(vm.uploadError != nil), actions: {
+            Button("OK") {
+                vm.uploadError = nil
+            }
+        }, message: {
+            Text(vm.uploadError ?? "")
+        })
     }
 }
 

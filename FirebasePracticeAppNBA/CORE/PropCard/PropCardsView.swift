@@ -50,9 +50,9 @@ struct PropCardsView: View {
                 
                 Spacer()
                 
-                if !allCards.isEmpty {
+                if !allCards.isEmpty && !queue.isEmpty {
                     indicatorRow
-                        .padding(.bottom, 40)
+                        .padding(.bottom, 20)
                 }
             }
             

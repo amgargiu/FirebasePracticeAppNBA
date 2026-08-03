@@ -147,7 +147,8 @@ extension PlayerModel {
         opp: String? = nil,
         pts: Double = 20.4,
         image: String? = nil,
-        teamImage: String? = nil
+        teamImage: String? = nil,
+        position: String? = nil
     ) -> PlayerModel {
         PlayerModel(
             id: id,
@@ -155,7 +156,7 @@ extension PlayerModel {
             image: image,
             team: team,
             teamImage: teamImage,
-            position: nil,
+            position: position,
             opp: opp,
             time: nil,
             MIN: nil,

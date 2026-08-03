@@ -7,35 +7,6 @@
 
 import Foundation
 
-//@MainActor
-//final class PropCardsViewModel: ObservableObject {
-//    
-//    @Published private(set) var propCards: [PropCard] = []
-//    // Cached, not published — the view never reads this directly.
-//    // Kept around so cards can be regenerated without a new Firestore fetch.
-//    private var players: [PlayerModel] = []
-//    
-//    func loadPropCards(count: Int = 7) {
-//        Task {
-//            do {
-//                let fetchedPlayers = try await PlayerManager.shared.getAllPlayers()
-//                self.players = fetchedPlayers
-//                self.propCards = CardGenerator.generateCards(from: fetchedPlayers, count: count)
-//            } catch {
-//                print("Error fetching players: \(error)")
-//            }
-//        }
-//    }
-//    
-//    func regenerateCards(count: Int = 7) {
-//        guard !players.isEmpty else { return }
-//        propCards = CardGenerator.generateCards(from: players, count: count)
-//    }
-//}
-
-
-import Foundation
-
 @MainActor
 final class PropCardsViewModel: ObservableObject {
     
@@ -50,7 +21,7 @@ final class PropCardsViewModel: ObservableObject {
     // Kept around so cards can be regenerated without a new Firestore fetch.
     private var players: [PlayerModel] = []
     
-    func loadPropCards(count: Int = 10) {
+    func loadPropCards(count: Int = 7) {
         Task {
             do {
                 let fetchedPlayers = try await PlayerManager.shared.getAllPlayers()
@@ -62,7 +33,7 @@ final class PropCardsViewModel: ObservableObject {
         }
     }
     
-    func regenerateCards(count: Int = 10) {
+    func regenerateCards(count: Int = 7) {
         guard !players.isEmpty else { return }
         propCards = CardGenerator.generateCards(from: players, count: count)
     }
@@ -111,6 +82,31 @@ final class PropCardsViewModel: ObservableObject {
                 )
             }
         }
+    }
+    
+    // MARK: - Submission
+    
+    @Published private(set) var isUploading = false
+    @Published var uploadError: String? = nil
+    @Published private(set) var didUploadSuccessfully = false
+    
+    /// Resolves the current decisions into PickModels and uploads all of them.
+    /// Drives isUploading/uploadError so the review screen can show progress
+    /// and surface a failure without needing its own view model.
+    func submitPicks() async {
+        isUploading = true
+        uploadError = nil
+        
+        do {
+            let picks = try resolvePicks()
+            print("Resolved \(picks.count) picks ready for upload: \(picks)")
+            try await PickManager.shared.uploadPicks(picks: picks)
+            didUploadSuccessfully = true
+        } catch {
+            uploadError = error.localizedDescription
+        }
+        
+        isUploading = false
     }
 }
 

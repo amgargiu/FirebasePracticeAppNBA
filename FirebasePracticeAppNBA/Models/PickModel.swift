@@ -36,6 +36,29 @@ struct PickModel: Identifiable, Codable, Hashable {
     let playerTwoId: Int?
     let selectedPlayerId: Int?
     
+    // Set to the client's current time at creation, same pattern as DBUser's
+    // init(auth:). Kept Optional so older documents that predate this field
+    // can still decode cleanly with a nil rather than failing outright.
+    let dateCreated: Date?
+    
+    // MARK: - Coding Keys
+    // Explicit even though every key currently matches the property name 1:1 —
+    // this is the single place to change if a Firestore field name ever needs
+    // to diverge from the Swift property name (same pattern as PlayerModel's "3PM").
+    enum CodingKeys: String, CodingKey {
+        case id
+        case userId
+        case cardType
+        case stat
+        case playerId
+        case line
+        case overUnder
+        case playerOneId
+        case playerTwoId
+        case selectedPlayerId
+        case dateCreated
+    }
+    
     // MARK: - Factory Initializers
     // Use these instead of the memberwise init directly, so you can't
     // accidentally set single-player fields on a PVP pick or vice versa.
@@ -62,7 +85,8 @@ struct PickModel: Identifiable, Codable, Hashable {
             overUnder: overUnder,
             playerOneId: nil,
             playerTwoId: nil,
-            selectedPlayerId: nil
+            selectedPlayerId: nil,
+            dateCreated: Date()
         )
     }
     
@@ -84,10 +108,8 @@ struct PickModel: Identifiable, Codable, Hashable {
             overUnder: nil,
             playerOneId: playerOneId,
             playerTwoId: playerTwoId,
-            selectedPlayerId: selectedPlayerId
+            selectedPlayerId: selectedPlayerId,
+            dateCreated: Date()
         )
     }
 }
-
-
-
