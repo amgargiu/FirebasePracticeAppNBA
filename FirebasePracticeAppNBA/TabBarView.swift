@@ -9,38 +9,49 @@ import SwiftUI
 
 struct TabBarView: View {
     
-    
     @Binding var showSignInView: Bool
     
     var body: some View {
-        
-        
         TabView {
             
             NavigationStack {
-                PropCardsView()
+                HomeView()
             }
             .tabItem {
-                Label("Products", systemImage: "cart")
+                Label("Home", systemImage: "house.fill")
             }
             
             NavigationStack {
-                PlayersView()
+                Text("My Picks")
             }
             .tabItem {
-                Label("Products", systemImage: "star.fill")
+                Label("My Picks", systemImage: "checkmark.circle.fill")
             }
             
             NavigationStack {
-                ProfileView(showSignInView: $showSignInView)
+                Text("Refer a Friend")
             }
             .tabItem {
-                Label("Profile", systemImage: "person")
+                Label("Refer a Friend", systemImage: "person.2.fill")
+            }
+            
+            NavigationStack {
+                Text("Tournaments")
+            }
+            .tabItem {
+                Label("Tournaments", systemImage: "trophy.fill")
+            }
+            
+            NavigationStack {
+                Text("Shop")
+            }
+            .tabItem {
+                Label("Shop", systemImage: "bag.fill")
             }
         }
     }
 }
 
 #Preview {
-    TabBarView(showSignInView: .constant( false))
+    TabBarView(showSignInView: .constant(false))
 }

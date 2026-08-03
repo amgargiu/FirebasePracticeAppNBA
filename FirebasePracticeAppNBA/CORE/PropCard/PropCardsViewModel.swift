@@ -101,9 +101,11 @@ final class PropCardsViewModel: ObservableObject {
             let picks = try resolvePicks()
             print("Resolved \(picks.count) picks ready for upload: \(picks)")
             try await PickManager.shared.uploadPicks(picks: picks)
+            print("Picks Uploaded successfully")
             didUploadSuccessfully = true
         } catch {
             uploadError = error.localizedDescription
+            print("pick upload failed: \(error)")
         }
         
         isUploading = false

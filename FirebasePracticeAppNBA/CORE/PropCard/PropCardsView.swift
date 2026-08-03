@@ -11,8 +11,9 @@ enum CardDecision: Equatable {
     case down
 }
 
-import SwiftUI
 
+import SwiftUI
+ 
 struct PropCardsView: View {
     
     @StateObject var vm = PropCardsViewModel()
@@ -37,6 +38,8 @@ struct PropCardsView: View {
     
     var body: some View {
         ZStack {
+            PackBackground()
+            
             VStack {
                 Spacer()
                 
@@ -52,7 +55,7 @@ struct PropCardsView: View {
                 
                 if !allCards.isEmpty && !queue.isEmpty {
                     indicatorRow
-                        .padding(.bottom, 20)
+                        .padding(.bottom, 40)
                 }
             }
             
@@ -265,47 +268,7 @@ struct PropCardsView: View {
         queue.removeFirst()
     }
 }
-
+ 
 #Preview {
     PropCardsView()
-}
-
-
-import SwiftUI
-
-extension PropCardsView {
-    
-    // MARK: - Indicator Row
-    
-    var indicatorRow: some View {
-        HStack(spacing: 14) {
-            ForEach(allCards, id: \.id) { card in
-                indicatorDot(for: card)
-            }
-        }
-    }
-    
-    private func indicatorDot(for card: PropCard) -> some View {
-        let isDecided = vm.decisions[card.id, default: .none] != .none
-        let isCurrent = card.id == queue.first?.id
-        
-        return ZStack {
-            Circle()
-                .fill(isDecided ? Color.accentColor : Color.gray.opacity(0.3))
-                .frame(width: 16, height: 16)
-            
-            if isDecided {
-                Image(systemName: "checkmark")
-                    .font(.system(size: 9, weight: .bold))
-                    .foregroundStyle(.white)
-            }
-        }
-        .overlay(
-            Circle()
-                .stroke(Color.primary.opacity(isCurrent ? 0.6 : 0), lineWidth: 1.5)
-                .frame(width: 22, height: 22)
-        )
-        .animation(.easeInOut, value: vm.decisions[card.id, default: .none])
-        .animation(.easeInOut, value: isCurrent)
-    }
 }
