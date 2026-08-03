@@ -97,3 +97,49 @@ enum StatType: String, Codable, CaseIterable {
         }
     }
 }
+
+
+
+/// Mock PropCard instances for SwiftUI previews only.
+/// Declared as `static let`, not computed `var` — the factory methods default
+/// to a fresh UUID each call, so a computed property would generate a
+/// different id every time it's accessed, breaking anything that matches
+/// against card.id (like decisions lookups) across multiple preview uses.
+extension PropCard {
+    
+    static let mockSingle: PropCard = .singlePlayerProp(
+        stat: .reb,
+        player: PlayerModel.mock(
+            id: 1,
+            name: "Victor Wembanyama",
+            team: "SAS",
+            opp: "MIN",
+            pts: 24.3,
+            image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1641705.png",
+            teamImage: "https://a.espncdn.com/i/teamlogos/nba/500/sa.png"
+        ),
+        line: 10.5
+    )
+    
+    static let mockPVP: PropCard = .pvpProp(
+        stat: .pts,
+        playerOne: PlayerModel.mock(
+            id: 1,
+            name: "Cade Cunningham",
+            team: "DET",
+            opp: "CLE",
+            pts: 24.5,
+            image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1630595.png",
+            teamImage: "https://a.espncdn.com/i/teamlogos/nba/500/det.png"
+        ),
+        playerTwo: PlayerModel.mock(
+            id: 2,
+            name: "Donovan Mitchell",
+            team: "CLE",
+            opp: "@DET",
+            pts: 25.5,
+            image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1628378.png",
+            teamImage: "https://a.espncdn.com/i/teamlogos/nba/500/cle.png"
+        )
+    )
+}

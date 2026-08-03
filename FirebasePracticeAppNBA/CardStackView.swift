@@ -9,11 +9,7 @@ import SwiftUI
 
 // MARK: - Decision Tracking
 
-enum CardDecision: Equatable {
-    case none
-    case up
-    case down
-}
+
 
 struct CardStackView: View {
     

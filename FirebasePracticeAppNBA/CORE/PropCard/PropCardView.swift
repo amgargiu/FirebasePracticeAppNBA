@@ -28,7 +28,7 @@ struct PropCardView: View {
                 // Split background — green/black radial on top, red/black radial on bottom
                 VStack(spacing: 0) {
                     RadialGradient(
-                        colors: [Color.green.opacity(0.85), .black],
+                        colors: [Color.green, .black],
                         center: .center,
                         startRadius: 20,
                         endRadius: 400
@@ -36,7 +36,7 @@ struct PropCardView: View {
                     .frame(height: 325)
                     
                     RadialGradient(
-                        colors: [Color.red.opacity(0.85), .black],
+                        colors: [Color.red, .black],
                         center: .center,
                         startRadius: 20,
                         endRadius: 400
@@ -44,10 +44,6 @@ struct PropCardView: View {
                     .frame(height: 325)
                 }
                 
-                // Thin divider line at the seam
-                Rectangle()
-                    .fill(Color.red)
-                    .frame(height: 3)
                 
                 // Player image + name, grouped so the name stays anchored to the image's bottom edge
                 VStack(spacing: 6) {
@@ -123,8 +119,15 @@ struct PropCardView: View {
                 }
                 .padding()
                 
+                
+                // Thin divider line at the seam
+                Rectangle()
+                    .fill(Color.white)
+                    .frame(height: 3)
+                
                 // Center stat badge — just the number and stat name now
                 VStack(spacing: 2) {
+                    
                     Text(String(format: "%.1f", line))
                         .font(.title2.bold())
                         .foregroundStyle(.black)
@@ -135,7 +138,7 @@ struct PropCardView: View {
                 .padding(10)
                 .background(
                     Circle()
-                        .fill(Color.yellow)
+                        .fill(Color.white)
                 )
             }
             .frame(width: 340, height: 650)
@@ -228,7 +231,7 @@ struct PropCardView: View {
         ZStack(alignment: .bottomTrailing) {
             RadialGradient(
                 colors: [
-                    Color(player.teamColor).opacity(0.85),
+                    Color(player.teamColor),
                     .black
                 ],
                 center: .bottomTrailing,

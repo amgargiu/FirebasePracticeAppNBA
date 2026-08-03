@@ -43,7 +43,7 @@ final class AuthManager {
     
     private init() {}
     
-    // locally check if user exists - not async which would = call to server
+    // locally check if user exists - NOT async which would = call to server
     func getAuthenticatedUser() throws -> AuthDataResultModel {
         guard let user = Auth.auth().currentUser else {
             throw URLError(.badServerResponse)

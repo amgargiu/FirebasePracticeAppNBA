@@ -13,7 +13,10 @@
 		730283DF301ED9B00041322D /* CardGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730283DE301ED9B00041322D /* CardGenerator.swift */; };
 		730283E2301EDBFC0041322D /* PropCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730283E1301EDBFC0041322D /* PropCardView.swift */; };
 		730283EC301EF65C0041322D /* PropCardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730283EB301EF65C0041322D /* PropCardsViewModel.swift */; };
-		730283EE301EF6900041322D /* PropCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730283ED301EF6900041322D /* PropCardsView.swift */; };
+		730283EE301EF6900041322D /* PropCardsView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730283ED301EF6900041322D /* PropCardsView2.swift */; };
+		730283F0301FF2200041322D /* PropCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730283EF301FF2200041322D /* PropCardsView.swift */; };
+		730283F23020107E0041322D /* ReviewPicksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730283F13020107E0041322D /* ReviewPicksView.swift */; };
+		730283F6302010C20041322D /* PickRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730283F5302010C20041322D /* PickRowView.swift */; };
 		7344C93A301837C200ABB4AD /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 7344C939301837C200ABB4AD /* FirebaseAnalytics */; };
 		7344C93C301837C200ABB4AD /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 7344C93B301837C200ABB4AD /* FirebaseAuth */; };
 		7344C93E301837C200ABB4AD /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 7344C93D301837C200ABB4AD /* FirebaseCrashlytics */; };
@@ -57,7 +60,10 @@
 		730283DE301ED9B00041322D /* CardGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGenerator.swift; sourceTree = "<group>"; };
 		730283E1301EDBFC0041322D /* PropCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropCardView.swift; sourceTree = "<group>"; };
 		730283EB301EF65C0041322D /* PropCardsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropCardsViewModel.swift; sourceTree = "<group>"; };
-		730283ED301EF6900041322D /* PropCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropCardsView.swift; sourceTree = "<group>"; };
+		730283ED301EF6900041322D /* PropCardsView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropCardsView2.swift; sourceTree = "<group>"; };
+		730283EF301FF2200041322D /* PropCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropCardsView.swift; sourceTree = "<group>"; };
+		730283F13020107E0041322D /* ReviewPicksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewPicksView.swift; sourceTree = "<group>"; };
+		730283F5302010C20041322D /* PickRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickRowView.swift; sourceTree = "<group>"; };
 		7344C9183018307A00ABB4AD /* FirebasePracticeAppNBA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebasePracticeAppNBA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7344C94E30184A8F00ABB4AD /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		7344C95B3018616100ABB4AD /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
@@ -112,9 +118,27 @@
 			children = (
 				730283E1301EDBFC0041322D /* PropCardView.swift */,
 				730283EB301EF65C0041322D /* PropCardsViewModel.swift */,
-				730283ED301EF6900041322D /* PropCardsView.swift */,
+				730283EF301FF2200041322D /* PropCardsView.swift */,
+				730283ED301EF6900041322D /* PropCardsView2.swift */,
 			);
 			path = PropCard;
+			sourceTree = "<group>";
+		};
+		730283F3302010980041322D /* ReviewPicks */ = {
+			isa = PBXGroup;
+			children = (
+				730283F4302010A50041322D /* PickRowView */,
+				730283F13020107E0041322D /* ReviewPicksView.swift */,
+			);
+			path = ReviewPicks;
+			sourceTree = "<group>";
+		};
+		730283F4302010A50041322D /* PickRowView */ = {
+			isa = PBXGroup;
+			children = (
+				730283F5302010C20041322D /* PickRowView.swift */,
+			);
+			path = PickRowView;
 			sourceTree = "<group>";
 		};
 		7344C90F3018307A00ABB4AD = {
@@ -147,6 +171,7 @@
 		7344C92F301832A600ABB4AD /* CORE */ = {
 			isa = PBXGroup;
 			children = (
+				730283F3302010980041322D /* ReviewPicks */,
 				730283E0301EDBE70041322D /* PropCard */,
 				7344C999301EC53A00ABB4AD /* Players */,
 				7344C9693019ACA000ABB4AD /* Authentication */,
@@ -369,12 +394,14 @@
 				7344C982301AE8F100ABB4AD /* UserManager.swift in Sources */,
 				730283D9301ED02F0041322D /* PickModel.swift in Sources */,
 				7344C96A3019ACA000ABB4AD /* SelectAuthView.swift in Sources */,
+				730283F6302010C20041322D /* PickRowView.swift in Sources */,
 				730283E2301EDBFC0041322D /* PropCardView.swift in Sources */,
 				730283EC301EF65C0041322D /* PropCardsViewModel.swift in Sources */,
 				7344C996301EC1E600ABB4AD /* PlayerModel.swift in Sources */,
 				7344C96B3019ACA000ABB4AD /* SignInEmailViewModel.swift in Sources */,
 				7344C986301B0B5E00ABB4AD /* ProfileViewModel.swift in Sources */,
 				7344C987301B0B5E00ABB4AD /* ProfileView.swift in Sources */,
+				730283F23020107E0041322D /* ReviewPicksView.swift in Sources */,
 				7344C96C3019ACA000ABB4AD /* SignInEmailView.swift in Sources */,
 				730283DB301ED2E40041322D /* CardStackView.swift in Sources */,
 				7344C96D3019ACA000ABB4AD /* SelectAuthViewModel.swift in Sources */,
@@ -383,7 +410,8 @@
 				7344C98A301B0B8C00ABB4AD /* TabBarView.swift in Sources */,
 				7344C9613019AB8600ABB4AD /* SignInGoogleHelper.swift in Sources */,
 				7344C9623019AB8600ABB4AD /* AuthManager.swift in Sources */,
-				730283EE301EF6900041322D /* PropCardsView.swift in Sources */,
+				730283EE301EF6900041322D /* PropCardsView2.swift in Sources */,
+				730283F0301FF2200041322D /* PropCardsView.swift in Sources */,
 				7344C9633019AB8600ABB4AD /* SignInAppleHelper.swift in Sources */,
 				7344C95C3018616100ABB4AD /* Utilities.swift in Sources */,
 				730283DD301ED9020041322D /* PropCard.swift in Sources */,
