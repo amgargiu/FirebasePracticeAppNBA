@@ -36,4 +36,14 @@ final class PickManager {
             try await uploadPick(pick: pick)
         }
     }
+    
+    // MARK: - Fetch All Picks For A User
+    
+    private func getUserPicksQuery(userId: String) -> Query {
+        picksCollection.whereField("userId", isEqualTo: userId)
+    }
+    
+    func getAllPicks(userId: String) async throws -> [PickModel] {
+        try await getUserPicksQuery(userId: userId).getDocuments2(as: PickModel.self)
+    }
 }

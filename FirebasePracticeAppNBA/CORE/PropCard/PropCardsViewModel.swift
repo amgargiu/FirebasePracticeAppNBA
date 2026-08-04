@@ -10,6 +10,19 @@ import Foundation
 @MainActor
 final class PropCardsViewModel: ObservableObject {
     
+    // Which pack template this session came from (e.g. "pack-1") — stable,
+    // shared by every opening of that same pack.
+    let packId: String
+    
+    // Unique to this specific opening — generated fresh the moment this view
+    // model is created, so every PickModel produced during this session
+    // (however many cards get skipped, re-decided, or edited) shares one id.
+    let packOpeningId: String = UUID().uuidString
+    
+    init(packId: String) {
+        self.packId = packId
+    }
+    
     @Published private(set) var propCards: [PropCard] = []
     
     // The single source of truth for what's been decided, shared across the
@@ -64,6 +77,8 @@ final class PropCardsViewModel: ObservableObject {
                 guard let player = card.player, let playerID = player.id, let line = card.line else { return nil }
                 return .singlePlayerProp(
                     userId: userId,
+                    packId: packId,
+                    packOpeningId: packOpeningId,
                     stat: card.stat,
                     playerId: playerID,
                     line: line,
@@ -75,6 +90,8 @@ final class PropCardsViewModel: ObservableObject {
                 let selectedID = decision == .up ? playerOneID : playerTwoID
                 return .pvpProp(
                     userId: userId,
+                    packId: packId,
+                    packOpeningId: packOpeningId,
                     stat: card.stat,
                     playerOneId: playerOneID,
                     playerTwoId: playerTwoID,
@@ -101,11 +118,9 @@ final class PropCardsViewModel: ObservableObject {
             let picks = try resolvePicks()
             print("Resolved \(picks.count) picks ready for upload: \(picks)")
             try await PickManager.shared.uploadPicks(picks: picks)
-            print("Picks Uploaded successfully")
             didUploadSuccessfully = true
         } catch {
             uploadError = error.localizedDescription
-            print("pick upload failed: \(error)")
         }
         
         isUploading = false
@@ -117,7 +132,7 @@ extension PropCardsViewModel {
     /// Preview-only factory — seeds propCards and decisions directly, bypassing
     /// the Firestore fetch, since propCards' setter isn't accessible outside this file.
     static func mockForPreview() -> PropCardsViewModel {
-        let vm = PropCardsViewModel()
+        let vm = PropCardsViewModel(packId: "pack-1")
         vm.propCards = [.mockSingle, .mockPVP]
         vm.decisions = [
             PropCard.mockSingle.id: .up,

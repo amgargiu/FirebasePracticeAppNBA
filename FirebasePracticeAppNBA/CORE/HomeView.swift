@@ -9,9 +9,9 @@ import SwiftUI
 
 struct HomeView: View {
     
-    private let packImageNames = ["pack-1", "pack-2", "pack-3"]
+    @Binding var showSignInView: Bool
     
-    @State private var selectedPackImage: String? = nil
+    @State private var selectedPack: PackModel? = nil
     
     var body: some View {
         ScrollView {
@@ -25,17 +25,18 @@ struct HomeView: View {
             .padding()
         }
         .navigationTitle("Home")
-        .fullScreenCover(
-            isPresented: Binding(
-                get: { selectedPackImage != nil },
-                set: { isPresented in
-                    if !isPresented { selectedPackImage = nil }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                NavigationLink {
+                    ProfileView(showSignInView: $showSignInView)
+                } label: {
+                    Image(systemName: "person.circle")
+                        .font(.title2)
                 }
-            )
-        ) {
-            if let selectedPackImage {
-                PackOpeningView(packImageName: selectedPackImage)
             }
+        }
+        .fullScreenCover(item: $selectedPack) { pack in
+            PackOpeningView(pack: pack)
         }
     }
     
@@ -60,8 +61,8 @@ struct HomeView: View {
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 16) {
-                    ForEach(packImageNames, id: \.self) { imageName in
-                        Image(imageName)
+                    ForEach(PackModel.allPacks) { pack in
+                        Image(pack.imageName)
                             .resizable()
                             .scaledToFill()
                             .frame(width: 160, height: 220)
@@ -71,7 +72,7 @@ struct HomeView: View {
                                     .stroke(Color.white.opacity(0.15), lineWidth: 1)
                             )
                             .onTapGesture {
-                                selectedPackImage = imageName
+                                selectedPack = pack
                             }
                     }
                 }
@@ -134,6 +135,6 @@ struct HomeView: View {
 
 #Preview {
     NavigationStack {
-        HomeView()
+        HomeView(showSignInView: .constant(false))
     }
 }

@@ -23,6 +23,8 @@ struct PickModel: Identifiable, Codable, Hashable {
     
     let id: String
     let userId: String
+    let packId: String
+    let packOpeningId: String
     let cardType: CardType
     let stat: StatType
     
@@ -48,6 +50,8 @@ struct PickModel: Identifiable, Codable, Hashable {
     enum CodingKeys: String, CodingKey {
         case id
         case userId
+        case packId
+        case packOpeningId
         case cardType
         case stat
         case playerId
@@ -70,6 +74,8 @@ struct PickModel: Identifiable, Codable, Hashable {
     static func singlePlayerProp(
         id: String = UUID().uuidString,
         userId: String,
+        packId: String,
+        packOpeningId: String,
         stat: StatType,
         playerId: Int,
         line: Double,
@@ -78,6 +84,8 @@ struct PickModel: Identifiable, Codable, Hashable {
         PickModel(
             id: id,
             userId: userId,
+            packId: packId,
+            packOpeningId: packOpeningId,
             cardType: .singlePlayerProp,
             stat: stat,
             playerId: playerId,
@@ -93,6 +101,8 @@ struct PickModel: Identifiable, Codable, Hashable {
     static func pvpProp(
         id: String = UUID().uuidString,
         userId: String,
+        packId: String,
+        packOpeningId: String,
         stat: StatType,
         playerOneId: Int,
         playerTwoId: Int,
@@ -101,6 +111,8 @@ struct PickModel: Identifiable, Codable, Hashable {
         PickModel(
             id: id,
             userId: userId,
+            packId: packId,
+            packOpeningId: packOpeningId,
             cardType: .pvpProp,
             stat: stat,
             playerId: nil,

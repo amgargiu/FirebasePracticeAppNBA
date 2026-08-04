@@ -22,6 +22,14 @@
 		730283FC30204E340041322D /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730283FB30204E340041322D /* IndicatorView.swift */; };
 		730283FE30204E850041322D /* PackBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730283FD30204E850041322D /* PackBackground.swift */; };
 		7302840030204EA70041322D /* PackOpeningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730283FF30204EA70041322D /* PackOpeningView.swift */; };
+		73028403302190A00041322D /* PicksFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73028402302190A00041322D /* PicksFlowView.swift */; };
+		73028405302196D60041322D /* PackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73028404302196D60041322D /* PackModel.swift */; };
+		7302840730219EFA0041322D /* Array+EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7302840630219EFA0041322D /* Array+EXT.swift */; };
+		7302840930219FE90041322D /* PickGroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7302840830219FE90041322D /* PickGroupModel.swift */; };
+		7302840C3021A02B0041322D /* MyPicksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7302840B3021A02B0041322D /* MyPicksViewModel.swift */; };
+		7302840E3021A0A20041322D /* SettledPickRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7302840D3021A0A20041322D /* SettledPickRowView.swift */; };
+		730284103021A0EF0041322D /* PickGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7302840F3021A0EF0041322D /* PickGroupView.swift */; };
+		730284123021A1030041322D /* MyPicksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730284113021A1030041322D /* MyPicksView.swift */; };
 		7344C93A301837C200ABB4AD /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 7344C939301837C200ABB4AD /* FirebaseAnalytics */; };
 		7344C93C301837C200ABB4AD /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 7344C93B301837C200ABB4AD /* FirebaseAuth */; };
 		7344C93E301837C200ABB4AD /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 7344C93D301837C200ABB4AD /* FirebaseCrashlytics */; };
@@ -74,6 +82,14 @@
 		730283FB30204E340041322D /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
 		730283FD30204E850041322D /* PackBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackBackground.swift; sourceTree = "<group>"; };
 		730283FF30204EA70041322D /* PackOpeningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackOpeningView.swift; sourceTree = "<group>"; };
+		73028402302190A00041322D /* PicksFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicksFlowView.swift; sourceTree = "<group>"; };
+		73028404302196D60041322D /* PackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackModel.swift; sourceTree = "<group>"; };
+		7302840630219EFA0041322D /* Array+EXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+EXT.swift"; sourceTree = "<group>"; };
+		7302840830219FE90041322D /* PickGroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickGroupModel.swift; sourceTree = "<group>"; };
+		7302840B3021A02B0041322D /* MyPicksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPicksViewModel.swift; sourceTree = "<group>"; };
+		7302840D3021A0A20041322D /* SettledPickRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettledPickRowView.swift; sourceTree = "<group>"; };
+		7302840F3021A0EF0041322D /* PickGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickGroupView.swift; sourceTree = "<group>"; };
+		730284113021A1030041322D /* MyPicksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPicksView.swift; sourceTree = "<group>"; };
 		7344C9183018307A00ABB4AD /* FirebasePracticeAppNBA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebasePracticeAppNBA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7344C94E30184A8F00ABB4AD /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		7344C95B3018616100ABB4AD /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
@@ -162,6 +178,17 @@
 			path = Subviews;
 			sourceTree = "<group>";
 		};
+		7302840A3021A01D0041322D /* MyPicks */ = {
+			isa = PBXGroup;
+			children = (
+				7302840B3021A02B0041322D /* MyPicksViewModel.swift */,
+				730284113021A1030041322D /* MyPicksView.swift */,
+				7302840F3021A0EF0041322D /* PickGroupView.swift */,
+				7302840D3021A0A20041322D /* SettledPickRowView.swift */,
+			);
+			path = MyPicks;
+			sourceTree = "<group>";
+		};
 		7344C90F3018307A00ABB4AD = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +212,8 @@
 				7344C995301EC1E600ABB4AD /* PlayerModel.swift */,
 				730283DC301ED9020041322D /* PropCard.swift */,
 				730283D8301ED02F0041322D /* PickModel.swift */,
+				73028404302196D60041322D /* PackModel.swift */,
+				7302840830219FE90041322D /* PickGroupModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -192,6 +221,7 @@
 		7344C92F301832A600ABB4AD /* CORE */ = {
 			isa = PBXGroup;
 			children = (
+				7302840A3021A01D0041322D /* MyPicks */,
 				730283F3302010980041322D /* ReviewPicks */,
 				730283E0301EDBE70041322D /* PropCard */,
 				7344C999301EC53A00ABB4AD /* Players */,
@@ -199,6 +229,7 @@
 				7344C985301B0B5E00ABB4AD /* Profile */,
 				7344C9703019B0FF00ABB4AD /* Settings */,
 				730283F930204B3C0041322D /* HomeView.swift */,
+				73028402302190A00041322D /* PicksFlowView.swift */,
 			);
 			path = CORE;
 			sourceTree = "<group>";
@@ -206,6 +237,7 @@
 		7344C931301832D200ABB4AD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				7302840630219EFA0041322D /* Array+EXT.swift */,
 				7344C98D301E70D200ABB4AD /* Query+EXT.swift */,
 			);
 			path = Extensions;
@@ -418,16 +450,21 @@
 				7344C982301AE8F100ABB4AD /* UserManager.swift in Sources */,
 				730283D9301ED02F0041322D /* PickModel.swift in Sources */,
 				7344C96A3019ACA000ABB4AD /* SelectAuthView.swift in Sources */,
+				730284123021A1030041322D /* MyPicksView.swift in Sources */,
 				730283F6302010C20041322D /* PickRowView.swift in Sources */,
+				73028405302196D60041322D /* PackModel.swift in Sources */,
 				730283FA30204B3C0041322D /* HomeView.swift in Sources */,
 				730283E2301EDBFC0041322D /* PropCardView.swift in Sources */,
 				730283FC30204E340041322D /* IndicatorView.swift in Sources */,
 				730283EC301EF65C0041322D /* PropCardsViewModel.swift in Sources */,
 				7302840030204EA70041322D /* PackOpeningView.swift in Sources */,
 				7344C996301EC1E600ABB4AD /* PlayerModel.swift in Sources */,
+				7302840C3021A02B0041322D /* MyPicksViewModel.swift in Sources */,
 				7344C96B3019ACA000ABB4AD /* SignInEmailViewModel.swift in Sources */,
 				7344C986301B0B5E00ABB4AD /* ProfileViewModel.swift in Sources */,
 				7344C987301B0B5E00ABB4AD /* ProfileView.swift in Sources */,
+				730284103021A0EF0041322D /* PickGroupView.swift in Sources */,
+				73028403302190A00041322D /* PicksFlowView.swift in Sources */,
 				730283F23020107E0041322D /* ReviewPicksView.swift in Sources */,
 				7344C96C3019ACA000ABB4AD /* SignInEmailView.swift in Sources */,
 				730283DB301ED2E40041322D /* CardStackView.swift in Sources */,
@@ -439,6 +476,7 @@
 				7344C9623019AB8600ABB4AD /* AuthManager.swift in Sources */,
 				730283F8302029D20041322D /* PickManager.swift in Sources */,
 				730283EE301EF6900041322D /* PropCardsView2.swift in Sources */,
+				7302840E3021A0A20041322D /* SettledPickRowView.swift in Sources */,
 				730283F0301FF2200041322D /* PropCardsView.swift in Sources */,
 				7344C9633019AB8600ABB4AD /* SignInAppleHelper.swift in Sources */,
 				7344C95C3018616100ABB4AD /* Utilities.swift in Sources */,
@@ -446,8 +484,10 @@
 				7344C97C3019B11400ABB4AD /* ContentView.swift in Sources */,
 				7344C97F301AE11200ABB4AD /* DBUser.swift in Sources */,
 				7344C97D3019B11400ABB4AD /* FirebasePracticeAppNBAApp.swift in Sources */,
+				7302840730219EFA0041322D /* Array+EXT.swift in Sources */,
 				7344C99D301EC5AE00ABB4AD /* PlayersView.swift in Sources */,
 				730283DF301ED9B00041322D /* CardGenerator.swift in Sources */,
+				7302840930219FE90041322D /* PickGroupModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

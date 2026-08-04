@@ -10,6 +10,7 @@ import SwiftUI
 struct ReviewPicksView: View {
     
     @ObservedObject var vm: PropCardsViewModel
+    @Environment(\.dismiss) private var dismiss
     
     private var decidedCards: [PropCard] {
         vm.propCards.filter { vm.decisions[$0.id, default: .none] != .none }
@@ -48,6 +49,9 @@ struct ReviewPicksView: View {
         Button(action: {
             Task {
                 await vm.submitPicks()
+                if vm.didUploadSuccessfully {
+                    dismiss()
+                }
             }
         }) {
             if vm.isUploading {

@@ -16,7 +16,7 @@ private enum PackOpeningPhase {
 
 struct PackOpeningView: View {
     
-    let packImageName: String
+    let pack: PackModel
     
     @State private var phase: PackOpeningPhase = .entering
     @State private var packOffset: CGFloat = 400
@@ -27,12 +27,12 @@ struct PackOpeningView: View {
     var body: some View {
         ZStack {
             if phase == .revealed {
-                PropCardsView()
+                PicksFlowView(pack: pack)
                     .transition(.opacity)
             } else {
                 PackBackground()
                 
-                Image(packImageName)
+                Image(pack.imageName)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 220, height: 300)
@@ -96,5 +96,5 @@ struct PackOpeningView: View {
 }
 
 #Preview {
-    PackOpeningView(packImageName: "pack-1")
+    PackOpeningView(pack: PackModel.allPacks[0])
 }

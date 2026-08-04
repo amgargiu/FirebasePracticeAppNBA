@@ -15,14 +15,14 @@ struct TabBarView: View {
         TabView {
             
             NavigationStack {
-                HomeView()
+                HomeView(showSignInView: $showSignInView)
             }
             .tabItem {
                 Label("Home", systemImage: "house.fill")
             }
             
             NavigationStack {
-                Text("My Picks")
+                MyPicksView()
             }
             .tabItem {
                 Label("My Picks", systemImage: "checkmark.circle.fill")

@@ -56,34 +56,56 @@ final class PlayerManager {
         return try await query
             .getDocuments2(as: PlayerModel.self)
     }
-}
     
-    
-    
+    // MARK: - Fetch Specific Players by ID
+        
+        private func getPlayersQuery(ids: [String]) -> Query {
+            playersCollection.whereField(FieldPath.documentID(), in: ids)
+        }
+        
+        // Firestore's `in` query operator only accepts up to 30 values per query —
+        // any more than that and the query throws instead of just fetching the
+        // first 30. Rather than let that surface as a confusing failure once
+        // someone's picks history grows past 30 unique players, this chunks the
+        // requested ids into batches of 30 and runs one query per batch, merging
+        // the results back into a single array.
+        func getPlayers(ids: [Int]) async throws -> [PlayerModel] {
+            guard !ids.isEmpty else { return [] }
+            
+            let stringIds = ids.map { $0.description }
+            var allPlayers: [PlayerModel] = []
+            
+            for chunk in stringIds.chunked(into: 30) {
+                let players = try await getPlayersQuery(ids: chunk).getDocuments2(as: PlayerModel.self)
+                allPlayers.append(contentsOf: players)
+            }
+            
+            return allPlayers
+        }
     
     
     // MARK: - Download JSON + Upload to Firestore
     
 //    func downloadPlayersAndUploadToFirebase() {
 //        // https://raw.githubusercontent.com/amgargiu/DraftKingsPick6_Practice/32773f6e123da7dd620ebf57feee7389d477d383/players.json
-//        
+//
 //        guard let url = URL(string: "https://raw.githubusercontent.com/amgargiu/DraftKingsPick6_Practice/32773f6e123da7dd620ebf57feee7389d477d383/players.json") else {
 //            return
 //        }
-//        
+//
 //        // use async await url sessions
 //        Task {
 //            do {
 //                let (data, _) = try await URLSession.shared.data(from: url)
-//                
+//
 //                // Note: unlike ProductArray, the JSON here is a top-level array,
 //                // so we decode straight into [PlayerModel] rather than a wrapper struct.
 //                let players = try JSONDecoder().decode([PlayerModel].self, from: data)
-//                
+//
 //                for player in players {
 //                    try? await PlayerManager.shared.uploadPlayer(player: player)
 //                }
-//                
+//
 //                print("Success")
 //                print(players.count)
 //            } catch {
@@ -92,3 +114,11 @@ final class PlayerManager {
 //        }
 //    }
 //}
+
+        
+}
+    
+    
+    
+    
+    

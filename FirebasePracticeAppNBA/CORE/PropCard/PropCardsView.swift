@@ -13,19 +13,16 @@ enum CardDecision: Equatable {
 
 
 import SwiftUI
- 
+
 struct PropCardsView: View {
     
-    @StateObject var vm = PropCardsViewModel()
+    @ObservedObject var vm: PropCardsViewModel
+    @Binding var queue: [PropCard]
     
     // The full, stable set — used only to render the indicator row (always shows all cards)
     var allCards: [PropCard] {
         vm.propCards
     }
-    
-    // The live, shrinking navigable stack. Deciding removes a card for good;
-    // skipping rotates it to the back so it resurfaces later.
-    @State var queue: [PropCard] = []
     
     @State private var dragOffset: CGSize = .zero
     
@@ -38,39 +35,20 @@ struct PropCardsView: View {
     
     var body: some View {
         ZStack {
-            PackBackground()
-            
             VStack {
                 Spacer()
                 
-                if allCards.isEmpty {
-                    ProgressView()
-                } else if queue.isEmpty {
-                    ReviewPicksView(vm: vm)
-                } else {
-                    cardStack
-                }
+                cardStack
                 
                 Spacer()
                 
-                if !allCards.isEmpty && !queue.isEmpty {
-                    indicatorRow
-                        .padding(.bottom, 40)
-                }
+                indicatorRow
+                    .padding(.bottom, 40)
             }
             
             // Directional glow overlays
             topGlow
             bottomGlow
-        }
-        .task {
-            vm.loadPropCards()
-        }
-        .onReceive(vm.$propCards) { newCards in
-            // Seed the queue once, the first time cards arrive
-            if queue.isEmpty && !newCards.isEmpty {
-                queue = newCards
-            }
         }
     }
     
@@ -268,7 +246,7 @@ struct PropCardsView: View {
         queue.removeFirst()
     }
 }
- 
+
 #Preview {
-    PropCardsView()
+    PropCardsView(vm: .mockForPreview(), queue: .constant([.mockSingle, .mockPVP]))
 }

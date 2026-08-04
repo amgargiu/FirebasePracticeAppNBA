@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PropCardsView2: View {
     
-    @StateObject private var vm = PropCardsViewModel()
+    @StateObject private var vm = PropCardsViewModel(packId: "111")
     
     var body: some View {
         ScrollView {
