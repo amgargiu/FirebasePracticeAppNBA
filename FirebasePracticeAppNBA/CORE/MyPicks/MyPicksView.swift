@@ -23,8 +23,12 @@ struct MyPicksView: View {
                         .foregroundStyle(.secondary)
                         .padding(.top, 60)
                 } else {
-                    ForEach(vm.pickGroups) { group in
-                        PickGroupView(group: group, playersById: vm.playersById)
+                    ForEach(Array(vm.pickGroups.enumerated()), id: \.element.id) { index, group in
+                        PickGroupView(
+                            group: group,
+                            playersById: vm.playersById,
+                            isInitiallyExpanded: index == 0
+                        )
                     }
                 }
             }
