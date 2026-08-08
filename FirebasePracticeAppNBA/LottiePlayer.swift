@@ -8,9 +8,6 @@
 import SwiftUI
 import Lottie
 
-import SwiftUI
-import Lottie
-
 /// Plays a Lottie animation from a .lottie package (dotLottie format).
 ///
 /// Uses the dedicated async DotLottieFile API rather than the simpler

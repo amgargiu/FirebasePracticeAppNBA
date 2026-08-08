@@ -36,14 +36,14 @@ struct TabBarView: View {
             }
             
             NavigationStack {
-                Text("Tournaments")
+                Text("Tourneys")
             }
             .tabItem {
-                Label("Tournaments", systemImage: "trophy.fill")
+                Label("Tourneys", systemImage: "trophy.fill")
             }
             
             NavigationStack {
-                Text("Shop")
+                StoreView()
             }
             .tabItem {
                 Label("Shop", systemImage: "bag.fill")

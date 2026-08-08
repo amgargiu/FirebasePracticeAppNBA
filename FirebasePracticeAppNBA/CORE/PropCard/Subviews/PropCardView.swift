@@ -28,7 +28,7 @@ struct PropCardView: View {
                 // Split background — green/black radial on top, red/black radial on bottom
                 VStack(spacing: 0) {
                     RadialGradient(
-                        colors: [Color.green, .black],
+                        colors: [.gray, Color.green],
                         center: .center,
                         startRadius: 20,
                         endRadius: 400
@@ -36,7 +36,7 @@ struct PropCardView: View {
                     .frame(height: 325)
                     
                     RadialGradient(
-                        colors: [Color.red, .black],
+                        colors: [.gray, Color.red],
                         center: .center,
                         startRadius: 20,
                         endRadius: 400
@@ -64,6 +64,8 @@ struct PropCardView: View {
                         .italic()
                         .foregroundStyle(.white)
                         .offset(x: 0, y: -20)
+                    
+                    Text(player.displayOpp)
                 }
                 .offset(x: 0, y: -50)
                 
@@ -309,6 +311,9 @@ struct PropCardView: View {
                     .foregroundStyle(Color(.white))
                     .italic(true)
             }
+            
+            Text(player.displayOpp)
+                .foregroundStyle(Color(.white))
             
             Spacer()
         }

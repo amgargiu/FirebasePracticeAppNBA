@@ -30,7 +30,7 @@ struct PicksFlowView: View {
             } else if queue.isEmpty {
                 ReviewPicksView(vm: vm)
             } else {
-                PropCardsView(vm: vm, queue: $queue)
+                PropCardsStackView(vm: vm, queue: $queue)
             }
         }
         .task {

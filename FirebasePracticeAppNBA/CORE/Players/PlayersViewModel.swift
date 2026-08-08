@@ -10,17 +10,22 @@ import Foundation
 
 import Foundation
 
-
 @MainActor
 final class PlayersViewModel: ObservableObject {
     
-    @Published private(set) var players : [PlayerModel] = []
+    @Published private(set) var players: [PlayerModel] = []
     
     private var lastDocument: DocumentSnapshotContainer? = nil
-
     
 //    func getPlayersAndUploadToFB() {
-//        PlayerManager.shared.downloadPlayersAndUploadToFirebase()
+//        Task {
+//            do {
+//                try await PlayerManager.shared.clearPlayersCollection()
+//                PlayerManager.shared.downloadPlayersAndUploadToFirebase()
+//            } catch {
+//                print("Failed to clear players collection: \(error)")
+//            }
+//        }
 //    }
     
     func getPlayers() {
@@ -32,6 +37,4 @@ final class PlayersViewModel: ObservableObject {
             }
         }
     }
-    
-    
 }

@@ -47,7 +47,7 @@ final class PlayerManager {
             .getDocumentsWithSnapshot(as: PlayerModel.self)
     }
     
-    
+    // To fetch array of all players in memeory from FB
     func getAllPlayers()async throws -> [PlayerModel] {
         var query : Query = getAllPlayersQuery()
         
@@ -57,8 +57,21 @@ final class PlayerManager {
             .getDocuments2(as: PlayerModel.self)
     }
     
+    // MARK: - Clear Collection
+    
+    // Fetches every document in the collection, then deletes them one at a
+    // time. Reference this before re-uploading a fresh JSON so old players
+    // don't linger alongside the new set.
+    func clearPlayersCollection() async throws {
+        let snapshot = try await playersCollection.getDocuments()
+        for document in snapshot.documents {
+            try await document.reference.delete()
+        }
+    }
+    
     // MARK: - Fetch Specific Players by ID
-        
+    // Used this for the MyPicksViewModel - don't need to get all players if just looking at MyPicksView
+    
         private func getPlayersQuery(ids: [String]) -> Query {
             playersCollection.whereField(FieldPath.documentID(), in: ids)
         }
@@ -84,40 +97,38 @@ final class PlayerManager {
         }
     
     
-    // MARK: - Download JSON + Upload to Firestore
+//     MARK: - Download JSON + Upload to Firestore
     
-//    func downloadPlayersAndUploadToFirebase() {
-//        // https://raw.githubusercontent.com/amgargiu/DraftKingsPick6_Practice/32773f6e123da7dd620ebf57feee7389d477d383/players.json
-//
-//        guard let url = URL(string: "https://raw.githubusercontent.com/amgargiu/DraftKingsPick6_Practice/32773f6e123da7dd620ebf57feee7389d477d383/players.json") else {
-//            return
-//        }
-//
-//        // use async await url sessions
-//        Task {
-//            do {
-//                let (data, _) = try await URLSession.shared.data(from: url)
-//
-//                // Note: unlike ProductArray, the JSON here is a top-level array,
-//                // so we decode straight into [PlayerModel] rather than a wrapper struct.
-//                let players = try JSONDecoder().decode([PlayerModel].self, from: data)
-//
-//                for player in players {
-//                    try? await PlayerManager.shared.uploadPlayer(player: player)
-//                }
-//
-//                print("Success")
-//                print(players.count)
-//            } catch {
-//                print(error)
-//            }
-//        }
-//    }
-//}
+    func downloadPlayersAndUploadToFirebase() {
+        // April 15th 2026 - all teams played - i thin - aprile 12th commit
+        // https://raw.githubusercontent.com/amgargiu/DraftKingsPick6_Practice/908d8ce4e161f32f9760ca814a7704ed2da39085/players.json
 
-        
+        guard let url = URL(string: "https://raw.githubusercontent.com/amgargiu/DraftKingsPick6_Practice/908d8ce4e161f32f9760ca814a7704ed2da39085/players.json") else {
+            return
+        }
+
+        // use async await url sessions
+        Task {
+            do {
+                let (data, _) = try await URLSession.shared.data(from: url)
+
+                // Note: unlike ProductArray, the JSON here is a top-level array,
+                // so we decode straight into [PlayerModel] rather than a wrapper struct.
+                let players = try JSONDecoder().decode([PlayerModel].self, from: data)
+
+                for player in players {
+                    try? await PlayerManager.shared.uploadPlayer(player: player)
+                }
+
+                print("Success")
+                print(players.count)
+            } catch {
+                print(error)
+            }
+        }
+    }
 }
-    
+
     
     
     

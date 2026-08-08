@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-extension PropCardsView {
+extension PropCardsStackView {
     
     // MARK: - Indicator Row
     

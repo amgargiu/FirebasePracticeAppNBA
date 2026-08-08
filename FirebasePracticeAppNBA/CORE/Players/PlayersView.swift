@@ -32,8 +32,6 @@ struct PlayersView: View {
         .padding()
         .onAppear {
             vm.getPlayers()
-        }
-        .task {
 //            vm.getPlayersAndUploadToFB()
         }
         .navigationTitle("Players")

@@ -15,8 +15,8 @@ struct FirebasePracticeAppNBAApp: App {
     
     var body: some Scene {
         WindowGroup {
-//            RootView()
-            ContentView()
+            RootView()
+//            PlayersView()
         }
     }
 }

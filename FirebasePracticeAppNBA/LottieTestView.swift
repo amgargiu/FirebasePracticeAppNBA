@@ -16,23 +16,14 @@ struct LottieTestView: View {
                     .foregroundStyle(.tint)
                 Text("Hello, world!")
                 
-                LottiePlayer(animationName: "cade-lottie")
-                    .frame(width: 200, height: 200)
                 
                 LottiePlayer(animationName: "Star rating 1")
                     .frame(width: 200, height: 200)
                 
-                LottiePlayer(animationName: "porzingis")
-                    .frame(width: 200, height: 200)
                 
-                LottiePlayer(animationName: "sengun2")
-                    .frame(width: 200, height: 200)
-                
-                LottiePlayer(animationName: "sengun")
-                    .frame(width: 200, height: 200)
-                
-                LottiePlayer(animationName: "porz")
-                    .frame(width: 200, height: 200)
+                LottieStoragePlayer(fileName: "cade-lottie.zip")
+                LottieStoragePlayer(fileName: "porz.zip")
+                LottieStoragePlayer(fileName: "sengun2.zip")
             }
             .padding()
         }
