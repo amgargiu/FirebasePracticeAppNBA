@@ -30,6 +30,9 @@
 		7302840E3021A0A20041322D /* SettledPickRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7302840D3021A0A20041322D /* SettledPickRowView.swift */; };
 		730284103021A0EF0041322D /* PickGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7302840F3021A0EF0041322D /* PickGroupView.swift */; };
 		730284123021A1030041322D /* MyPicksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730284113021A1030041322D /* MyPicksView.swift */; };
+		73028416302599D10041322D /* LottiePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73028415302599D10041322D /* LottiePlayer.swift */; };
+		7302841930259AF60041322D /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 7302841830259AF60041322D /* Lottie */; };
+		7302841B302772510041322D /* LottieTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7302841A302772510041322D /* LottieTestView.swift */; };
 		7344C93A301837C200ABB4AD /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 7344C939301837C200ABB4AD /* FirebaseAnalytics */; };
 		7344C93C301837C200ABB4AD /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 7344C93B301837C200ABB4AD /* FirebaseAuth */; };
 		7344C93E301837C200ABB4AD /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 7344C93D301837C200ABB4AD /* FirebaseCrashlytics */; };
@@ -90,6 +93,8 @@
 		7302840D3021A0A20041322D /* SettledPickRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettledPickRowView.swift; sourceTree = "<group>"; };
 		7302840F3021A0EF0041322D /* PickGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickGroupView.swift; sourceTree = "<group>"; };
 		730284113021A1030041322D /* MyPicksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPicksView.swift; sourceTree = "<group>"; };
+		73028415302599D10041322D /* LottiePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottiePlayer.swift; sourceTree = "<group>"; };
+		7302841A302772510041322D /* LottieTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieTestView.swift; sourceTree = "<group>"; };
 		7344C9183018307A00ABB4AD /* FirebasePracticeAppNBA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebasePracticeAppNBA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7344C94E30184A8F00ABB4AD /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		7344C95B3018616100ABB4AD /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
@@ -127,6 +132,7 @@
 			files = (
 				7344C93E301837C200ABB4AD /* FirebaseCrashlytics in Frameworks */,
 				7344C940301837C200ABB4AD /* FirebaseFirestore in Frameworks */,
+				7302841930259AF60041322D /* Lottie in Frameworks */,
 				7344C942301837C200ABB4AD /* FirebasePerformance in Frameworks */,
 				7344C95630185D2700ABB4AD /* GoogleSignInSwift in Frameworks */,
 				7344C93A301837C200ABB4AD /* FirebaseAnalytics in Frameworks */,
@@ -319,6 +325,8 @@
 				7344C92E301832A300ABB4AD /* Models */,
 				7344C92F301832A600ABB4AD /* CORE */,
 				730283DA301ED2E40041322D /* CardStackView.swift */,
+				73028415302599D10041322D /* LottiePlayer.swift */,
+				7302841A302772510041322D /* LottieTestView.swift */,
 				7344C9733019B11400ABB4AD /* Assets.xcassets */,
 				7344C9743019B11400ABB4AD /* ContentView.swift */,
 				7344C9753019B11400ABB4AD /* FirebasePracticeAppNBAApp.swift */,
@@ -381,6 +389,7 @@
 				7344C943301837C200ABB4AD /* FirebaseStorage */,
 				7344C95330185D2700ABB4AD /* GoogleSignIn */,
 				7344C95530185D2700ABB4AD /* GoogleSignInSwift */,
+				7302841830259AF60041322D /* Lottie */,
 			);
 			productName = FirebasePracticeAppNBA;
 			productReference = 7344C9183018307A00ABB4AD /* FirebasePracticeAppNBA.app */;
@@ -413,6 +422,7 @@
 			packageReferences = (
 				7344C938301837C200ABB4AD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				7344C95230185D2700ABB4AD /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				7302841730259AF60041322D /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 7344C9193018307A00ABB4AD /* Products */;
@@ -452,6 +462,8 @@
 				7344C96A3019ACA000ABB4AD /* SelectAuthView.swift in Sources */,
 				730284123021A1030041322D /* MyPicksView.swift in Sources */,
 				730283F6302010C20041322D /* PickRowView.swift in Sources */,
+				73028416302599D10041322D /* LottiePlayer.swift in Sources */,
+				7302841B302772510041322D /* LottieTestView.swift in Sources */,
 				73028405302196D60041322D /* PackModel.swift in Sources */,
 				730283FA30204B3C0041322D /* HomeView.swift in Sources */,
 				730283E2301EDBFC0041322D /* PropCardView.swift in Sources */,
@@ -705,6 +717,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		7302841730259AF60041322D /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.6.1;
+			};
+		};
 		7344C938301837C200ABB4AD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -724,6 +744,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		7302841830259AF60041322D /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7302841730259AF60041322D /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
 		7344C939301837C200ABB4AD /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7344C938301837C200ABB4AD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
